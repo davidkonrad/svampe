@@ -1,0 +1,17 @@
+{
+    "sProcessing":   "Henter...",
+    "sLengthMenu":   "Vis _MENU_ poster",
+    "sZeroRecords":  "Ingen poster matcher s&oslash;gningen",
+    "sInfo":         "Viser _START_ til _END_ af _TOTAL_ poster",
+    "sInfoEmpty":    "Viser 0 til 0 af 0 poster",
+    "sInfoFiltered": "(filtreret fra _MAX_ poster)",
+    "sInfoPostFix":  "",
+    "sSearch":       "Filtrér resultater :",
+    "sUrl":          "",
+    "oPaginate": {
+        "sFirst":    "F&oslash;rste",
+        "sPrevious": "Forrige",
+        "sNext":     "N&aelig;ste",
+        "sLast":     "Sidste"
+    }
+}

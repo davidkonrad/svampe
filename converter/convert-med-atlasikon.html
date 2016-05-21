@@ -1,0 +1,45 @@
+
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+<script type="text/javascript">
+var count=1;
+function buttonClick() {
+	url='Convert.php?from='+count;
+	$('html, body').css("cursor", "wait");
+	$.ajax({
+		url: url,
+		timeout: 100000,
+		success: function(html) {
+			$('html, body').css("cursor", "auto");
+			alert(html);
+			count=count+20000;
+			$("#go").val('> nÃ¦ste 20000 fra '+count);
+		}
+	});
+}
+function atlasIconClick() {
+	url='Convert.php?action=atlasicon&from='+count;
+	$('html, body').css("cursor", "wait");
+	$.ajax({
+		url: url,
+		timeout: 100000,
+		success: function(html) {
+			$('html, body').css("cursor", "auto");
+			alert(html);
+			count=count+20000;
+			$("#atlasicon-update").val('AtlasIcon update > nÃ¦ste 20000 fra '+count);
+		}
+	});
+}
+</script>
+	
+</head>
+<body>
+
+
+<input type="button" value='0-1000' id="go" onclick="buttonClick();">
+<br/><br/><br/>
+<input type="button" value="AtlasIcon update 0-2000" id="atlasicon-update" onclick="atlasIconClick();">
+
+</html>

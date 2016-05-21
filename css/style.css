@@ -1,0 +1,274 @@
+.ui-autocomplete {
+	max-height: 250px;
+	overflow-y: auto;
+	overflow-x: hidden;
+	padding-right: 20px;
+	text-align: left;
+	font-size: 11px;
+}
+.ui-combobox {
+	position: relative;
+	display: inline-block;
+}
+.ui-combobox-toggle {
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	margin-left: -1px;
+	padding: 0;
+	/* adjust styles for IE 6/7 */
+	*height: 1.7em;
+	*top: 0.1em;
+}
+.ui-combobox-input {
+	width: 200px;
+	margin: 0;
+	padding: 0.3em;
+	font-size: 1em;
+	color: black;
+	background-color: white;
+}
+.ui-button-icon-only {
+	width: 1.8em;
+}
+.poly-buttons {
+	float:right;
+	clear: both;
+	position: relative;
+	text-align: right;
+	width: 500px;
+	z-index:33; /* because svampe.dk/../style->bodyTextArea is absolute and has z-index 32*/
+}
+.poly-buttons input {
+	font-size:12px;
+	margin: 1px;
+}
+#poly-size {
+	font-size: 0.8em;
+	margin-right:7px;
+	margin-top:8px;
+	clear:both;
+	font-family : arial, helvetica;
+}
+
+td.input {
+	text-align: left;
+}
+input[type=text], .ui-combobox-input {
+	padding: 0.3em;
+	font-size: 0.8em;
+}
+hr {
+	border: 0;
+	height: 1px;
+	color: black;
+	background-color: gray;
+}
+fieldset {
+	border: 1px solid gray;
+	font-family : helvetica;
+	font-size: 0.9em;
+}
+a.fund {
+	text-decoration: none;
+	color: navy;
+	padding-left: 3px;
+	padding-right: 4px;
+	padding-top: 1px;
+	padding-bottom: 1px;
+	margin-bottom: 1px;
+	white-space: nowrap;
+}
+a.fund:hover {
+	text-decoration: none;
+	background-color: navy;
+	color: white;
+	font-weight: normal;
+}
+.result-footer {
+	float:left;
+	clear:both;
+	width:956px;
+	overflow:auto;
+	height:30px;
+	XXposition: absolute;
+	XXz-index: 67;
+	border-top:1px solid black;
+	padding-top: 5px;
+	padding-right: 10px;
+	padding-left: 5px;
+}
+#frontpage-footer {
+	background-color: A8A8A8;
+	border-top: 1px solid black;
+	width: 100%;
+	clear: both;
+	margin: 0px;
+	padding: 0px;
+	height: 18px;
+	position: absolute;
+	z-index: 40;
+	top: 630px;
+} 
+table.farvekoder td {
+	vertical-align: top;
+	font-size: 12px;
+	margin-bottom: 4px;
+}
+
+/* overwrite svampe.dk/../styles */
+#bodyTextArea {
+	width: 500px;
+	z-index: 0;
+}
+#bodyRightArea {
+	top: -1px;
+	left: 495px;
+	width: 472px;
+	z-index: -1;
+	height: 614px;
+	margin: 0px;
+	padding: 0px;
+	overflow: hidden;
+	background-color: #EBE8DF;
+	text-align: center;
+}
+#map {
+	margin: 0px;
+	padding: 0px;
+	z-index: 0;
+	width: 472px; 
+	height: 610px;
+}
+#bodyContainer {
+	height: 624px;
+	clear: both;
+	z-index: 0;
+}
+.ui-tooltip {
+	font-size: 14px;
+	font-family: verdana, helvetica;
+}
+
+/* header */
+#header-caption {
+	padding-left:7px;
+	padding-top:1px;
+	float:left;
+}
+#perma-link {
+	float:right;
+	font-size:12px;
+}
+#perma-link-button {
+	padding-top: 0px;
+	padding-bottom: 0px;
+	margin:0px;
+	font-size:10px;
+	position:relative;
+	top:-3px;
+}
+#result-count {
+	float:right;
+	width:380px;
+	text-align:right;
+	margin-right: 5px;
+	padding-top:1px;
+}
+#save-as-csv {
+	margin:0px;
+	font-size:10px;
+	font-weight:bold;
+	color:gray;
+	position: relative;
+	float: right;
+}
+
+/* popup */
+#roedliste-select {
+	z-index:188;
+	position:absolute;
+	left:142px;
+	top:273px;
+	background-color:white;
+	border:1px solid silver;
+	width:330px;
+	padding: 5px;
+	text-align: left;
+	font-size: 11px;
+	white-space: nowrap;
+	display: block;
+	font-family: helvetica, arial;
+}
+#naturtype-select {
+	z-index:188;
+	position:absolute;
+	left:296px;
+	top:166px;
+	background-color:white;
+	border:1px solid silver;
+	width:330px;
+	padding: 5px;
+	text-align: left;
+	font-size: 11px;
+	white-space: nowrap;
+	display: block;
+	font-family: helvetica, arial;
+}
+.popup label {
+	position: relative;
+	top: -2px;
+	left: -3px;
+	cursor: pointer;
+}
+.popup .closebox {
+	font-size: 20px;
+	padding-left: 4px;
+	padding-right: 4px;
+	border: 1px solid #ebebeb;
+	cursor: pointer;
+	color: graytext;
+}
+
+
+/* boostrap */
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  display: none;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0;
+  list-style: none;
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  *border-right-width: 2px;
+  *border-bottom-width: 2px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
+  -webkit-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+     -moz-box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+          box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+  -webkit-background-clip: padding-box;
+     -moz-background-clip: padding;
+          background-clip: padding-box;
+}
+
+.dropdown-menu li {
+	text-align: left;
+}
+
+.dropdown-menu a {
+	color: black;
+	font-size: 12px;
+	font-weight: normal;
+	font-family : arial, helvetica;
+}
+.dropdown-menu a:hover {
+	color: forestgreen;
+}

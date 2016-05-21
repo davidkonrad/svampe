@@ -1,0 +1,1 @@
+[03-Sep-2013 03:01:52 Europe/Berlin] PHP Fatal error:  Allowed memory size of 134217728 bytes exhausted (tried to allocate 45870558 bytes) in /home/svampedk/public_html/soeg/FX/FX.php on line 605

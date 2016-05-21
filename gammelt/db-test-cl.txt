@@ -1,0 +1,45 @@
+atlas
+-----------------
+AtlasIDnummer
+AtlasUserlati
+AtlasUserlatiNum
+AtlasUserLong
+AtlasUserLongNum
+date_day
+date_month
+date_year
+AtlaslegInit -> atlasPerson
+DKIndex ->atlasSpec
+UTM10 ->atlasUTM
+
+atlasPerson
+-----------------
+AtlaslegInit
+Leg
+...
+data fra persondatabase?
+
+
+atlasSpec
+-----------------
+DKIndex
+DKName
+GenSpec
+MycokeyIDDKWebLink
+
+
+atlastUTM
+----------------
+UTM10
+GooglePolygonFill
+
+
+atlasForum
+----------------
+AtlasIDnummer ->atlas
+AtlasForumLastComment
+AtlasForumreply
+AtlasForumVali
+AtlasForumValue
+...
+

@@ -1,0 +1,100 @@
+Lad os se: den du kalder AtlasSpec er den tabel der indeholder informationen om taxonet; om arten. Lad os kalde den AtlasTaxon i stedet
+I den tabel kan vi lægge følgende info:
+DKIndex: artsnavnets kode
+DKName: danske navn
+GenSpec: latinsk slægts- og artsnavn
+MycoKeyIDDKWebLink: URL til artens infoside på Mycokey.com
+Desuden lægger vi følgende ind:
+FullName: artens fulde latinske navn, med autornavn (den er delvis redundant med GenSpec, men jeg tror vi er nødt til at tage den som den er, qua basens historiske struktur)
+Status: Rødlistestatus i bogstaver
+Statustal: Rødlistestatus i tal (så kan jeg lave nogle sorteringer nemmere)
+AtlasArtmedtagesiStatistik: 1 eller 0 (angiver om det er en art, der er en del af projektet eller ej)
+ 
+Tabellen atlasPerson - personinfo
+AtlasLegInit: navnekode, aldrig længere end 5
+Leg: Fulde navn
+I første omgang tror jeg ikke vi gør mere her
+ 
+Tabellen atlasUTM - Information om UTM kvadraterne
+UTM10: feltets navn, altid 2bogstaver+2tal
+GooglePolygonFill: streng til at tegne polygonet i googlemap
+Desuden tror jeg vi tilføjer; (så kan jeg nemlig bruge denne til at tegne utm-landskortet med også)
+countRecs: antal records indtastet fra det pågældende felt
+countSpecies: antal arter  tilsvarende
+alle fire hjørners koordinater:
+NVLat
+NVLong
+NElat
+NELong
+SELat
+SELong
+SVLat
+SVLong (alle decimaltal med punktum som skilletegn)
+ 
+atlasForum – information relateret til forum-kommentarer
+AtlasIDNummer: Primary key
+AtlasForumLastComment – DayofYear for sidste kommentar, så jeg kan se om der er nye kommentarer
+AtlasForumReply – angiver om der er kommentarer I forum til fundet
+De to følgende er ,på trods af navnet, ikke knyttede til forumkommentarer, men handler om selve fundet, de skal derfor flyttes til atlas-tabellen
+AtlasForumVali – fundets vurderingsstatus, I ord
+AtlasForumValue – samme i talværdi (bedre til sorteringer)
+ 
+Med kun to værdier i tabellen – er den besværet værd at skille fra fund-tabellen?
+ 
+Så skal vi have oprettet en lokalitetstabel, lad os kalde den AtlasGaz (efter gazeteer)
+AtlasLocID
+localitybasicString
+Kommune; hvilken kommune
+UTM10; hvilket UTM felt er den i
+Latitude (punktum-dec) – lokalitetens standard-koordinater
+Longitude
+Medtages: 1 eller 0 (bruges navnet eller ej)
+Hovedlokalitet (er det en samlelokalitet med underlokaliteter, 1 eller 0)
+ 
+ 
+Og så den sidste tabel, atlas-tabellen. Jeg tror for at holde navngivningen konsistent, at vi kalder den AtlasFund i stedet
+AtlasIDNummer: Primary key
+AtlasUserlati
+AtlasUserLong
+AtlasUserlatiNum
+AtlasuserLongNum (grunden til jeg spejler dem I to, med og uden kommaer, er bare dovenskab for at undgå at skulle lave mellemprogrammering for at komme fra punktum-decimal til komma-decimal, når jeg eks søger på et interval. Hvis du kan lave det sådan, at vi kan intervalsøge i feltet med punktum-decimal, kan vi spare det ene sæt væk.)
+date_day
+date_month
+date-year
+AtlasLocID: ID-nummer til lokalitet, key til lokalitetstabel (så behøver vi ikke localityBasicString her), til gengæld:
+LocalityFriText: kommentarfelt til lokalitetsnavn
+AtlasLegInit: key til AtlasPerson
+DKIndex: key til AtlasSpec
+UTM10: key til AtlasUTM
+ 
+Og så skal
+AtlasForumVali
+AtlasForumValue herned
+ 
+Desuden tilføjer vi (til andre søgninger):
+CreationDate (dd/mm/yyyy)
+AtlasJulianDay (dateofYear)
+AtlasLNR (løbenummer, delvis redundant med AtlasIDnummer)
+AtlasPic; 1 eller 0: er der billede eller ej
+Og så nogle tællerfelter, der alle er 1 eller 0:
+AtlasFirstRecmark
+AtlasFirstYear
+AtlasPersFirst
+AtlasPersFirstYear
+AtlasUTMFirst
+ 
+Så tror jeg vi kan lave alle søgninger i SQL tabellerne!
+ 
+DVS vi skal sætte synkronisering op til følgende tabeller:
+Taxon: kun lidt dynamik, en gang om ugen kunne være nok, ret fikseret antal records, pt ca 26000
+Person: Ikke meget dynamik, men når der kommer nye personer skal de kunne se sig selv efter første dag, så en gang om dagen, ret fikseret antal records, pt 972
+UTM: Tællerne beregnes en gang om dagen, helt fikseret antal records, 670
+Lokalitet:
+Forum: en gang om dagen
+Og Fund: Mindst en gang om dagen, afhængig af hvor belastende processen er. Meget dynamisk antal, pt 309.000, growing ca 50000/år
+ 
+/ CL
+PS: Jeg holder fri i morgen i stedet for i dag og torsdag er jeg fuldt bundet op ude af huset med noget materiale-flytten – og fredag er det skisme fridag igen! Har du nok til hjemmearbejde de næste to dage? Så lang tid jeg ikke er sikker på at du har en computer her, synes jeg ikke du skal bruge tid på at tage herind.
+ 
+Ellers: du har kigget lidt på Specify. Prøv at kigge på dette projekt også: www.morphbank.net . Det er en multimediaplatform som vi også skal til at bruge her i huset og som skal integreres med Specify. MorphBank er ved at reprogrammere det hele i Drupal i en ny udgave. Prøv at overvej hvad man skulle gøre for at kunne integrere de to platfome sådan at når man indtaster specimen-oplysninger i Specify og vil lægge et billede op, så foregår det egentlig i MorphBank, men sker automatisk inde fra Specify-interfacet.
+ 

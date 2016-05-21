@@ -1,0 +1,92 @@
+Hermed en oversigt over de felter jeg har med på filemakers søgelayout:
+ 
+---------
+svampe.dk bruger
+
+Bruger: DAK
+pas: zoomus15
+
+-----------
+
+svampe.dk FTP
+
+svampe.dk, user: svampe.dk, pas: jp55fcqc 
+
+----------
+
+
+Felter fra Filemaker:
+UTM10 - varchar(4) – utm feltkode
+AtlasUserlati -decimalnummer med punktum
+AtlasUserLong -decimalnummer med punktum
+AtlasUserlatiNum -decimalnummer med komma - samme som de to foregående
+AtlasUserLongNum -decimalnummer med komma
+AtlasGeoref - 1 eller 0, fortæller mig om indtaster selv har klikket en præcis koordinat
+localityBasicString - stednavn fra navnetabel
+(localityID mangler, men skal med) - nummer
+ 
+AtlasPic 1 el. 0 - fortæller om der er uploadet billede
+AtlasRecInclude 1 el. 0 - fortæller om record skal tælles med eller ej i visse sammenhænge
+ 
+DKIndex - artens id nummer
+GenSpec latinsk slægt og artsnavn, fra taxontabel
+DKName - DKnavn fra taxontabel
+StatusTal - status (nummer) fra taxontabel
+ 
+Status - status (i bogstaver) fra taxontabel varchar (4)
+AtlasIDnummer - key unik ID varchar(20)
+AtlasLNR - løbenummer
+AtlasIkon - varchar (10) – hvilken farve ikon på kortet
+AtlasForumReply varchar(5)
+AtlasForumvali - varchar(15)
+AtlasForumvalue - nummer
+AtlasForumLastComment - nummer, dayofyear for sidste kommentar
+GooglePolygonFill - varchar(1000) - streng der nok skal hentes fra anden tabel via UTM10
+ 
+date_year - nummer
+date_month - nummer
+date_day - nummer
+ 
+Leg - fulde navn på finder
+AtlasLegInit - initialkode, max 5 bogstaver
+ 
+AtlasArteriAtlasperiod - 1 el. 0, bruges i nogle optællinger
+AtlasreelArt 1 el. 0 - bruges i nogle optællinger
+ 
+MycoKeyIDDKWebLink - URL, kunne godt hentes fra taxontabel
+
+-----------------------
+
+fra csv
+
+AtlasArteriAtlasperiod,
+AtlasForumLastComment,
+AtlasForumreply,
+AtlasForumVali,
+AtlasForumValue,
+AtlasGeoRef,
+AtlasIDnummer,
+AtlasIkon,
+AtlaslegInit,
+AtlasLNR,
+AtlasPic,
+AtlasRecInclude,
+AtlasreelArt,
+AtlasUserlati,
+AtlasUserlatiNum,
+AtlasUserLong,
+AtlasUserLongNum,
+date_day,
+date_month,
+date_year,
+Leg,
+localityBasicString,
+UTM10,
+GooglePolygonFill,
+DKIndex,
+DKName,
+GenSpec,
+MycokeyIDDKWebLink,
+Status,
+StatusTal
+----------------------------

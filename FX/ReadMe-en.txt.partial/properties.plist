@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>URL data</key>
+	<array>
+		<dict>
+			<key>url</key>
+			<string>ftp://svampe.dk/%2Fpublic_html/XXPHP/FX/Tutorials/FX_charset/ReadMe-en.txt</string>
+		</dict>
+	</array>
+	<key>dataFileName</key>
+	<string>ReadMe-en.txt</string>
+	<key>filename</key>
+	<string>ReadMe-en.txt</string>
+	<key>uid</key>
+	<integer>1563475539</integer>
+</dict>
+</plist>

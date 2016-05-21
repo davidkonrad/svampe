@@ -1,0 +1,29 @@
+<html>
+<head>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+</head>
+<body>
+<script type="text/javascript">
+var count=1;
+function buttonClick() {
+	url='Convert.php?from='+count;
+	$('html, body').css("cursor", "wait");
+	$.ajax({
+		url: url,
+		timeout: 100000,
+		success: function(html) {
+			$('html, body').css("cursor", "auto");
+			alert(html);
+			count=count+30000;
+			$("#go").val('> næste 30000 fra '+count);
+		}
+	});
+}
+</script>
+	
+
+
+<input type="button" value='0-30000' id="go" onclick="buttonClick();">
+
+</html>
+
