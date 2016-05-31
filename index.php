@@ -28,7 +28,11 @@ $perma=(isset($_GET['search_id'])) ? $_GET['search_id'] : 'false';
 <script type="text/javascript" src="js/utm.js"></script>
 <script type="text/javascript" src="js/jquery.qtip.js"></script>
 <link rel="stylesheet" href="js/jquery.qtip.css" type="text/css" media="screen" />
+<!--
 <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/keydragzoom/src/keydragzoom.js?"></script>
+--->
+<script type="text/javascript" src="https://rawgithub.com/nmccready/google-maps-utility-library-v3-keydragzoom/master/dist/keydragzoom.js"></script>
+
 <script type="text/javascript" src="http://google-maps-utility-library-v3.googlecode.com/svn/trunk/infobox/src/infobox.js"></script>
 <script type="text/javascript" src="https://www.google.com/jsapi"></script>
 <script type="text/javascript">google.load('visualization', '1.0', {'packages':['corechart']});</script>
